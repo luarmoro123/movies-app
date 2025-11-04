@@ -17,16 +17,15 @@ const HomeScreem = () => {
         )
     }
     return (
-        <ScrollView>
-            <View className='mt-2 pd-10  ' style={{ padding: safeArea.top }}>
-                <Text className='text-3xl font-bold px-4 mb-2  '>
+        <ScrollView className='bg-gray-900'>
+            <View className='mt-2 pd-10 pb-20' style={{ padding: safeArea.top }}>
+                <Text className='text-3xl font-bold px-4 mb-2 text-white'>
                     Movies App
                 </Text>
                 <MainSlideshow movies={nowPlayingQuery.data ?? []} />
                 <MovieHorizontalList title='Popular' movies={popularQuery.data ?? []} />
                 <MovieHorizontalList title='Top Rated' movies={topRatedQuery.data ?? []} />
                 <MovieHorizontalList title='Upcoming' movies={upcomingQuery.data ?? []} />
-                <MovieHorizontalList movies={upcomingQuery.data ?? []} />
             </View>
         </ScrollView>
 

@@ -13,16 +13,16 @@ const MainSlideshow = ({ movies }: Props) => {
     const ref = useRef<ICarouselInstance>(null)
     const width = useWindowDimensions().width
     return (
-        <View className='h-[250px] w-full'>
+        <View className='h-[450px] w-full'>
             <Carousel
                 ref={ref}
                 data={movies}
-                renderItem={({ item }) => <MoviePoster id={item.id} poster={item.poster} />}
-                width={200}
-                height={350}
+                renderItem={({ item }) => <MoviePoster id={item.id} poster={item.poster} width={300} height={450} />}
+                width={width}
+                height={450}
                 style={{
                     width: width,
-                    height: 350,
+                    height: 450,
                     justifyContent: 'center',
                     alignItems: 'center',
                 }}
