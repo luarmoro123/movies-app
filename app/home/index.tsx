@@ -23,9 +23,9 @@ const HomeScreem = () => {
                     Movies App
                 </Text>
                 <MainSlideshow movies={nowPlayingQuery.data ?? []} />
-                <MovieHorizontalList title='Popular' movies={popularQuery.data ?? []} />
-                <MovieHorizontalList title='Top Rated' movies={topRatedQuery.data ?? []} />
-                <MovieHorizontalList title='Upcoming' movies={upcomingQuery.data ?? []} />
+                <MovieHorizontalList title='Popular' movies={popularQuery.data?.pages.flat() ?? []} loadNextPage={popularQuery.fetchNextPage} />
+                <MovieHorizontalList title='Top Rated' movies={topRatedQuery.data?.pages.flat() ?? []} loadNextPage={topRatedQuery.fetchNextPage} />
+                <MovieHorizontalList title='Upcoming' movies={upcomingQuery.data?.pages.flat() ?? []} loadNextPage={upcomingQuery.fetchNextPage} />
             </View>
         </ScrollView>
 
